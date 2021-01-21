@@ -3,9 +3,6 @@ package com.cc.autocode_mybatisplus;
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
@@ -16,13 +13,11 @@ import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.cc.entity.Book;
 import com.cc.service.BookService;
-import com.cc.service.impl.BookServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @SpringBootTest
 class AutocodeMybatisplusApplicationTests {
@@ -36,12 +31,12 @@ class AutocodeMybatisplusApplicationTests {
 //        wrapper.eq("id",1);
 //        List<Book> list = BookServiceImpl.list(wrapper);
 //        System.out.println(list);
-        Book book = BookServiceImpl.getById(1);
-        Book book1 = BookServiceImpl.getById(1);
-        book1.setBookAuthor("我是第二次修改0000");
-        BookServiceImpl.updateById(book1);
-        book1.setBookAuthor("我是第一次修改99999");
-        BookServiceImpl.updateById(book);
+//        Book book = BookServiceImpl.getById(1);
+//        Book book1 = BookServiceImpl.getById(1);
+//        book1.setBookAuthor("我是第二次修改0000");
+//        BookServiceImpl.updateById(book1);
+//        book1.setBookAuthor("我是第一次修改99999");
+//        BookServiceImpl.updateById(book);
 //        BookServiceImpl.removeById(7);
 //        book.setBookName("conmmmm");
 //        BookServiceImpl.save(book);
@@ -105,5 +100,11 @@ class AutocodeMybatisplusApplicationTests {
         mpg.setStrategy(strategy);
         mpg.execute(); //执行
     }
+
+    @Test
+    public void testYML(){
+        System.out.println(book);
+    }
+
 
 }

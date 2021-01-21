@@ -13,9 +13,11 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NonNull;
 import lombok.experimental.Accessors;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 /**
  * <p>
@@ -27,7 +29,8 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Component
-@ConfigurationProperties(prefix = "book")
+@ConfigurationProperties(prefix = "book") //跟yml 配置链接
+@Validated//数据校验
 //@ApiModel(value="Book对象", description="")
 public class Book implements Serializable {
 
@@ -35,7 +38,7 @@ public class Book implements Serializable {
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
-
+    @NonNull
     private String bookCode;
 
     private String bookName;
