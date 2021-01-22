@@ -11,9 +11,7 @@ import java.io.Serializable;
 //import io.swagger.annotations.ApiModel;
 //import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NonNull;
+import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -28,6 +26,8 @@ import org.springframework.validation.annotation.Validated;
  * @since 2021-01-21
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Component
 @ConfigurationProperties(prefix = "book") //跟yml 配置链接
 @Validated//数据校验

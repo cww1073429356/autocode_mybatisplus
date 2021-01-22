@@ -12,7 +12,9 @@ import com.baomidou.mybatisplus.generator.config.po.TableFill;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.cc.entity.Book;
+import com.cc.service.AsyncService;
 import com.cc.service.BookService;
+import com.cc.service.impl.AsyncServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,7 +24,9 @@ import java.util.ArrayList;
 @SpringBootTest
 class AutocodeMybatisplusApplicationTests {
     @Autowired
-    private Book book;
+    private AsyncService asyncServiceImpl;
+//    @Autowired
+//    private Book book;
     @Autowired
     private BookService BookServiceImpl;
     @Test
@@ -103,8 +107,11 @@ class AutocodeMybatisplusApplicationTests {
 
     @Test
     public void testYML(){
-        System.out.println(book);
+        //System.out.println(book);
     }
-
+    @Test
+    void test1() {
+        asyncServiceImpl.dealAsync();
+    }
 
 }

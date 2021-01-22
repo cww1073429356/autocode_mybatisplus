@@ -2,6 +2,7 @@ package com.cc.controller;
 
 
 import com.cc.entity.Book;
+import com.cc.service.AsyncService;
 import com.cc.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,9 +22,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/book")
 public class BookController {
     @Autowired
+    private AsyncService asyncServiceImpl;
+    @Autowired
     private BookService bookServiceImpl;
     @RequestMapping("/Byid")
     public Book getBook(Integer id){
+//        asyncServiceImpl.add();
         Book byId = bookServiceImpl.getById(id);
         return byId;
     }

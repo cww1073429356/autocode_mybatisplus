@@ -2,7 +2,18 @@ server:
   port: 8080
   servlet:
     context-path: /
+#spring.mail.username=24736743@qq.comspring.mail.password=你的qq授权码spring.mail.host=smtp.qq.com# qq需要配置sslspring.mail.properties.mail.smtp.ssl.enable=true
+
 spring:
+  mail:
+    username: 274880230@qq.com
+    password: ioptjrkcywuxcbdb
+    host: smtp.qq.com
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
   profiles:
     active: dev #配置环境
   datasource:
@@ -11,6 +22,7 @@ spring:
     username: root
     password: 1234
     type: com.alibaba.druid.pool.DruidDataSource
+
 mybatis:
   type-aliases-package: com.cc.entity
 mybatis-plus:
@@ -23,4 +35,5 @@ book:
   book-name: ${random.int}_aaaa # 动态赋值
   #id: 1
   book-code: ${random.uuid}_code
+
 
